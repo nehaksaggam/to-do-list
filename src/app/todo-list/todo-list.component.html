@@ -6,8 +6,8 @@
 </style>
 <h1>TODO</h1>
 <div class="add-button-container">
+    <input type="text" [(ngModel)]="todo" />
     <button (click)="addItem()" class="btn btn-primary">Add item</button>
 </div>
-<app-todo-item description="Get groceries"></app-todo-item>
-<app-todo-item description="Book tickets"></app-todo-item>
-<app-todo-item description="Keep next week plan ready"></app-todo-item>
+
+<app-todo-item *ngFor="let description of todos" [description]="description"></app-todo-item>
